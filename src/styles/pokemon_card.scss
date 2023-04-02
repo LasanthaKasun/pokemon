@@ -1,0 +1,58 @@
+.pokemon-card-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-radius: 15px;
+  &:hover {
+    background-color: #0000002c !important;
+    cursor: pointer;
+  }
+}
+.pokemon-id {
+  color: #000;
+  font-weight: 700;
+}
+
+.pokemon-name {
+  color: #646464;
+  font-weight: bolder;
+  font-size: 25px;
+}
+.pokemon-tag-wrapper {
+  display: flex;
+  gap: 15px;
+  padding-top: 10px;
+}
+.pokemon-tag {
+  padding: 10px;
+  border-radius: 10px;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 15px;
+  &.green-tag {
+    background-color: #fbbb67;
+  }
+  &.indego-tag {
+    background-color: #f752f7;
+  }
+}
+.smaller {
+  font-size: 10px;
+  color: #414040;
+}
+.delete-icon {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  right: 0;
+  margin-top: -10px;
+  margin-right: 10px;
+  background-color: #d10808;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  color: #ffffff;
+  font-size: 15px;
+}

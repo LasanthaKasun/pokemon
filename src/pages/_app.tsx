@@ -8,6 +8,7 @@ import "@/styles/main_nav.scss";
 import "@/styles/loader.scss";
 import "@/styles/spaces.scss";
 import "@/styles/responsive.scss";
+import "@/styles/pokemon_card.scss";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
