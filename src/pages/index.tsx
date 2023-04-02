@@ -17,6 +17,7 @@ export default function Home() {
 
   const pokemonList = useSelector(selectPokeList);
 
+  const [filter, setFilter] = useState("");
   const [visible, setVisible] = useState(false);
   const [pokemanData, setPokemonData] = useState({
     id: 0,
@@ -65,13 +66,13 @@ export default function Home() {
           />
           <TextField
             label="Search pokmon"
-            value="abc"
-            onHandleChanges={(e) => console.log(e.target.value)}
+            value={filter}
+            onHandleChanges={(e) => setFilter(e.target.value)}
           />
         </ResponsiveGrid>
         <Spaces />
         <ResponsiveGrid>
-          {pokemonList.map((pokeObj, index) => (
+          {pokemonList.filter(fillObj => `${fillObj.id}` === filter || fillObj.name.includes(filter)).map((pokeObj, index) => (
             <PokemonCard
               key={index}
               id={pokeObj.id}
