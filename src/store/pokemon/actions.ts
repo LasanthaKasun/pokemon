@@ -32,3 +32,8 @@ export const deletePokemon = (payload: number): types.DeletePokemon => ({
   type: actionTypes.DELETE_POKEMON,
   payload
 });
+
+/****************************** REORDER POKEMON **********************************/
+export const reOrderPokemon = (): types.ReOrderPokemon => ({
+  type: actionTypes.RE_ORDER_POKEMON,
+});

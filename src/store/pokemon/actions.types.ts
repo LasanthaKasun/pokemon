@@ -9,3 +9,6 @@ export const SET_POKEMON = "SET_POKEMON";
 /***************** Delete Pokemon list ***************************/
 export const DELETE_POKEMON = "DELETE_POKEMON";
 
+/***************** Reorder Pokemon list ***************************/
+export const RE_ORDER_POKEMON = "RE_ORDER_POKEMON";
+

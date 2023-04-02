@@ -6,7 +6,7 @@ import PokemonCard from "@/components/PokemonCard/PokemonCard";
 import ResponsiveGrid from "@/components/ResponsiveGrid/ResponsiveGrid";
 import Spaces from "@/components/Spaces/Spaces";
 import { PokemonStateInterface } from "@/shared/interfaces/pokemon.interface";
-import { deletePokemon } from "@/store/pokemon/actions";
+import { deletePokemon, reOrderPokemon } from "@/store/pokemon/actions";
 import { RootState } from "@/store/store";
 import Head from "next/head";
 import { useDispatch, useSelector } from "react-redux";
@@ -27,7 +27,7 @@ export default function Teams() {
   };
 
   const handleReorderTeam = () => {
-    // dispatch(deletePokemon(id));
+    dispatch(reOrderPokemon());
   };
 
   return (

@@ -28,9 +28,15 @@ export type DeletePokemon = {
   payload: number;
 };
 
+/****************************** REORDER POKEMON **********************************/
+export type ReOrderPokemon = {
+  type: typeof actionTypes.RE_ORDER_POKEMON;
+};
+
 export type PokemonActions =
   | GetPokemonList
   | GetPokemonListSuccess
   | GetPokemonListFailure
   | SetPokemon
-  | DeletePokemon;
+  | DeletePokemon
+  | ReOrderPokemon;

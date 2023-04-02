@@ -33,6 +33,12 @@ export const pokemonReducer = (
         pokemonTeam: state.pokemonTeam.filter(data => data.id !== action.payload),
       };
     }
+    case actionsTypes.RE_ORDER_POKEMON: {
+      return {
+        ...state,
+        pokemonTeam: state.pokemonTeam.sort(() => Math.random() - 0.5),
+      };
+    }
     default:
       return { ...state };
   }
