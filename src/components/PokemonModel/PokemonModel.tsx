@@ -21,6 +21,7 @@ const PokemonModel: FC<PokemonModelProps> = ({
     <div className="model-wrapper">
       <div
         className="model-inner"
+        data-aos="zoom-in"
         style={{ backgroundColor: getRandomColor(), display: "grid" }}
       >
         <div className="model-content">

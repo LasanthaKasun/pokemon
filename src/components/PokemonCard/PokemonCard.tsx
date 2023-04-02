@@ -28,6 +28,7 @@ const PokemonCard: FC<PokemonCardProps> = ({
   return (
     <div
       className="pokemon-card-wrapper"
+      data-aos="fade-up"
       style={{ backgroundColor: getRandomColor(), position: "relative" }}
       onClick={onHandleClick}
     >
