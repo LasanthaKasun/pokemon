@@ -14,6 +14,7 @@ import "@/styles/responsive.scss";
 import "@/styles/pokemon_card.scss";
 import "@/styles/pokemon_model.scss";
 import "@/styles/floating_section.scss";
+import "@/styles/empty_box.scss";
 import 'aos/dist/aos.css';
 import 'react-toastify/dist/ReactToastify.css';
 

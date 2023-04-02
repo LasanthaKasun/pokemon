@@ -1,4 +1,5 @@
 import Button from "@/components/Button/Button";
+import EmptyBox from "@/components/EmptyBox/EmptyBox";
 import FloatingSection from "@/components/FloatingSection/FloatingSection";
 import MainNav from "@/components/MainNav/MainNav";
 import PokemonCard from "@/components/PokemonCard/PokemonCard";
@@ -23,6 +24,10 @@ export default function Teams() {
     toast.success(name + " pokemon delete successfully", {
       icon: "🚀",
     });
+  };
+
+  const handleReorderTeam = () => {
+    // dispatch(deletePokemon(id));
   };
 
   return (
@@ -60,18 +65,25 @@ export default function Teams() {
               }
             />
           ))}
+          {currentTeam.pokemonTeam.length === 0 && (
+            <EmptyBox
+              message="😏 You haven't any pokemon for creating own team. please go to home and add your pokemon"
+              label="Go to Home"
+              path="/"
+            />
+          )}
         </ResponsiveGrid>
         <Spaces />
         <ResponsiveGrid>
           <Button
             label="Random Re-order"
-            disable={false}
+            disable={currentTeam.pokemonTeam.length === 0}
             type="warn"
-            onHandleClick={() => console.log("123")}
+            onHandleClick={() =>handleReorderTeam()}
           />
           <Button
             label="Submit Team"
-            disable={false}
+            disable={currentTeam.pokemonTeam.length === 0}
             type="info"
             onHandleClick={() => console.log("123")}
           />
