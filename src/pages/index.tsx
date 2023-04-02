@@ -118,8 +118,7 @@ export default function Home() {
                 height={pokeObj.height}
                 onHandleClick={() => visiblePokemonModel(pokeObj)}
                 isDeleteAvailable={false}
-                onDeleteClick={() => console.log("")}
-                onOrderChange={() => console.log("")}
+                onDeleteClick={() => {}}
               />
             ))}
         </ResponsiveGrid>

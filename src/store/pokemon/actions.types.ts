@@ -5,3 +5,7 @@ export const GET_POKEMON_LIST_FAILURE = "GET_POKEMON_LIST_FAILURE";
 
 /***************** Get Pokemon list ***************************/
 export const SET_POKEMON = "SET_POKEMON";
+
+/***************** Delete Pokemon list ***************************/
+export const DELETE_POKEMON = "DELETE_POKEMON";
+

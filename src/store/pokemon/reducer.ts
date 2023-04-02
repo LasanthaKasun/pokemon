@@ -24,8 +24,13 @@ export const pokemonReducer = (
     case actionsTypes.SET_POKEMON: {
       return {
         ...state,
-        fetchStatus: "success",
         pokemonTeam: [...state.pokemonTeam, action.payload],
+      };
+    }
+    case actionsTypes.DELETE_POKEMON: {
+      return {
+        ...state,
+        pokemonTeam: state.pokemonTeam.filter(data => data.id !== action.payload),
       };
     }
     default:

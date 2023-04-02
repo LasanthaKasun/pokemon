@@ -26,3 +26,9 @@ export const setPokemon = (payload: PokemonInterface): types.SetPokemon => ({
   type: actionTypes.SET_POKEMON,
   payload
 });
+
+/****************************** DELETE POKEMON **********************************/
+export const deletePokemon = (payload: number): types.DeletePokemon => ({
+  type: actionTypes.DELETE_POKEMON,
+  payload
+});

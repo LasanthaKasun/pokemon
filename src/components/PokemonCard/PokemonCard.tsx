@@ -11,7 +11,6 @@ interface PokemonCardProps {
   isDeleteAvailable: boolean;
   onHandleClick: () => void;
   onDeleteClick: (id: number) => void;
-  onOrderChange: () => void;
 }
 
 const PokemonCard: FC<PokemonCardProps> = ({
@@ -23,7 +22,6 @@ const PokemonCard: FC<PokemonCardProps> = ({
   isDeleteAvailable,
   onHandleClick,
   onDeleteClick,
-  onOrderChange,
 }) => {
   return (
     <div

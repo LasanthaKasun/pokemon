@@ -22,8 +22,15 @@ export type SetPokemon = {
   payload: PokemonInterface;
 };
 
+/****************************** DELETE POKEMON **********************************/
+export type DeletePokemon = {
+  type: typeof actionTypes.DELETE_POKEMON;
+  payload: number;
+};
+
 export type PokemonActions =
   | GetPokemonList
   | GetPokemonListSuccess
   | GetPokemonListFailure
-  | SetPokemon;
+  | SetPokemon
+  | DeletePokemon;
