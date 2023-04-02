@@ -1,3 +1,7 @@
+import MainNav from "@/components/MainNav/MainNav";
+import ResponsiveGrid from "@/components/ResponsiveGrid/ResponsiveGrid";
+import Spaces from "@/components/Spaces/Spaces";
+import TextField from "@/components/TextField/TextField";
 import Head from "next/head";
 
 export default function Home() {
@@ -13,7 +17,19 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <h1>Poke test!</h1>
+        <ResponsiveGrid>
+          <MainNav
+            title="Pokemon Game"
+            subTitle="Select and build your favorite pokmon team"
+          />
+          <TextField
+            label="Search pokmon"
+            value="abc"
+            onHandleChanges={(e) => console.log(e.target.value)}
+          />
+        </ResponsiveGrid>
+        <Spaces />
+        <ResponsiveGrid>Pockmon List</ResponsiveGrid>
       </main>
     </>
   );
