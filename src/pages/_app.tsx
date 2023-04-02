@@ -7,6 +7,7 @@ import "@/styles/text_field.scss";
 import "@/styles/main_nav.scss";
 import "@/styles/loader.scss";
 import "@/styles/spaces.scss";
+import "@/styles/responsive.scss";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
