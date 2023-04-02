@@ -49,8 +49,8 @@ export default function Home() {
               id={pokeObj.id}
               name={pokeObj.name}
               image={pokeObj.image}
-              weight={230}
-              height={23}
+              weight={pokeObj.weight}
+              height={pokeObj.height}
               onHandleClick={() => console.log("")}
               isDeleteAvailable={false}
               onDeleteClick={() => console.log("")}

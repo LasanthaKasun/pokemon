@@ -4,6 +4,8 @@ export interface PokemonInterface {
   id: number;
   name: string;
   image: string;
+  height: number;
+  weight: number
   // Include more information here
 }
 

@@ -40,11 +40,13 @@ function* getPokemonListSaga() {
       const pokemonListWithData: PokemonInterface[] = pokeList.map(
         (responseData) => {
           const { data } = responseData;
-          const { name, id, sprites } = data;
+          const { name, id, sprites, height, weight } = data;
           return {
             id: id,
             name: name,
             image: sprites.front_default,
+            height: height,
+            weight: weight
           };
         }
       );
