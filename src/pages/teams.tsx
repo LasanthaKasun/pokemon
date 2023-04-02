@@ -76,7 +76,7 @@ export default function Teams() {
           ))}
           {currentTeam.pokemonTeam.length === 0 && (
             <EmptyBox
-              message="😏 You haven't any pokemon for creating own team. please go to home and add your pokemon"
+              message="😏 Congratz.. Your team has been created. If you need another one, click go to home"
               label="Go to Home"
               path="/"
             />
