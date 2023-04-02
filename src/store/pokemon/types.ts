@@ -16,7 +16,14 @@ export type GetPokemonListFailure = {
   payload: string;
 };
 
+/****************************** SET POKEMON **********************************/
+export type SetPokemon = {
+  type: typeof actionTypes.SET_POKEMON;
+  payload: PokemonInterface;
+};
+
 export type PokemonActions =
   | GetPokemonList
   | GetPokemonListSuccess
-  | GetPokemonListFailure;
+  | GetPokemonListFailure
+  | SetPokemon;

@@ -20,3 +20,9 @@ export const getPokemonListFailure = (
   type: actionTypes.GET_POKEMON_LIST_FAILURE,
   payload,
 });
+
+/****************************** SET POKEMON **********************************/
+export const setPokemon = (payload: PokemonInterface): types.SetPokemon => ({
+  type: actionTypes.SET_POKEMON,
+  payload
+});

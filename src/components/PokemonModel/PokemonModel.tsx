@@ -46,7 +46,7 @@ const PokemonModel: FC<PokemonModelProps> = ({
           />
         </div>
         <div className="balance">
-          {Number(MAX_TEAM_SIZE - currentTeamLength + 1) + " Poker is left"}
+          {Number(MAX_TEAM_SIZE - currentTeamLength) + " Poker is left"}
         </div>
         <div className="footer">
           <Button

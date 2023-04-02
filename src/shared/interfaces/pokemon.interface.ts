@@ -12,6 +12,7 @@ export interface PokemonInterface {
 export interface PokemonStateInterface {
   pokemonList: PokemonInterface[];
   fetchStatus: fetchStatus;
+  pokemonTeam: PokemonInterface[];
   error: string;
 }
 
