@@ -4,6 +4,7 @@ import { Provider } from "react-redux";
 import "@/styles/main.scss";
 import "@/styles/button.scss";
 import "@/styles/text_field.scss";
+import "@/styles/main_nav.scss";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (

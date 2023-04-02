@@ -4,7 +4,7 @@ interface ButtonProps {
   label: string;
   type: string;
   disable: boolean;
-  onHandleClick: any;
+  onHandleClick: () => void;
 }
 
 const Button: FC<ButtonProps> = ({ label, type, disable, onHandleClick }) => {

@@ -1,32 +1,31 @@
 .button-container {
-    color: #ffffff;
-    font-weight: 500;
-    height: 40px;
-    min-width: 100px;
-    border-radius: 12px;
-    padding: 10px;
+  color: #ffffff;
+  font-weight: 500;
+  height: 40px;
+  min-width: 100px;
+  border-radius: 12px;
+  padding: 10px;
+}
+.info {
+  background-color: #1084f8;
+  &:hover {
+    background-color: #6bb2fa;
   }
-  .info {
-      background-color: #1084f8;
-      &:hover {
-          background-color: #6bb2fa;
-      }
+}
+.default {
+  background-color: #ff9966;
+  &:hover {
+    background-color: #f8b898;
   }
-  .default {
-      background-color: #ff9966;
-      &:hover {
-          background-color: #f8b898;
-      }
+}
+.warn {
+  background-color: #660080;
+  &:hover {
+    background-color: #d756f7;
   }
-  .warn {
-      background-color: #660080;
-      &:hover {
-          background-color: #d756f7;
-      }
-  }
-  .disable {
-      background-color: #e0e0d1;
-      color: #a8a8a2;
-      cursor: not-allowed;
-  }
-  
+}
+.disable {
+  background-color: #e0e0d1;
+  color: #a8a8a2;
+  cursor: not-allowed;
+}
