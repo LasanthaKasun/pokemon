@@ -6,3 +6,5 @@ export const getRandomColor = () => {
     }
     return color;
 };
+
+export const MAX_TEAM_SIZE = 6;

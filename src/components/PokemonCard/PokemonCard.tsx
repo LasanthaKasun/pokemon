@@ -29,6 +29,7 @@ const PokemonCard: FC<PokemonCardProps> = ({
     <div
       className="pokemon-card-wrapper"
       style={{ backgroundColor: getRandomColor(), position: "relative" }}
+      onClick={onHandleClick}
     >
       <div>
         {isDeleteAvailable && (

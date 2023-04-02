@@ -1,12 +1,15 @@
+import Loader from "@/components/Loader/Loader";
 import MainNav from "@/components/MainNav/MainNav";
 import PokemonCard from "@/components/PokemonCard/PokemonCard";
+import PokemonModel from "@/components/PokemonModel/PokemonModel";
 import ResponsiveGrid from "@/components/ResponsiveGrid/ResponsiveGrid";
 import Spaces from "@/components/Spaces/Spaces";
 import TextField from "@/components/TextField/TextField";
+import { PokemonInterface } from "@/shared/interfaces/pokemon.interface";
 import { getPokemonList } from "@/store/pokemon/actions";
 import { selectPokeList } from "@/store/pokemon/selector";
 import Head from "next/head";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 export default function Home() {
@@ -14,9 +17,34 @@ export default function Home() {
 
   const pokemonList = useSelector(selectPokeList);
 
+  const [visible, setVisible] = useState(false);
+  const [pokemanData, setPokemonData] = useState({
+    id: 0,
+    name: "",
+    weight: 0,
+    height: 0,
+    image: "",
+  });
+
   useEffect(() => {
     dispatch(getPokemonList());
   }, [dispatch]);
+
+  const visiblePokemonModel = (pokemon: PokemonInterface) => {
+    setPokemonData({
+      ...pokemanData,
+      id: pokemon.id,
+      name: pokemon.name,
+      weight: pokemon.weight,
+      height: pokemon.height,
+      image: pokemon.image,
+    });
+    setVisible(true);
+  };
+
+  const buildYourTeam = () => {
+    console.log(pokemanData);
+  };
 
   return (
     <>
@@ -51,13 +79,22 @@ export default function Home() {
               image={pokeObj.image}
               weight={pokeObj.weight}
               height={pokeObj.height}
-              onHandleClick={() => console.log("")}
+              onHandleClick={() => visiblePokemonModel(pokeObj)}
               isDeleteAvailable={false}
               onDeleteClick={() => console.log("")}
               onOrderChange={() => console.log("")}
             />
           ))}
         </ResponsiveGrid>
+        {pokemonList.length === 0 && <Loader />}
+        {visible && (
+          <PokemonModel
+            pokemon={pokemanData}
+            onHandleClose={() => setVisible(false)}
+            onHandleGet={() => buildYourTeam()}
+            currentTeamLength={1}
+          />
+        )}
       </main>
     </>
   );
