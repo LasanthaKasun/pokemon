@@ -56,3 +56,17 @@
   color: #ffffff;
   font-size: 15px;
 }
+.not-available-wrapper {
+  position: absolute;
+  background-color: #000000b6;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffffa6;
+  font-weight: 700;
+}

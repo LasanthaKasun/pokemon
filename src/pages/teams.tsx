@@ -68,6 +68,7 @@ export default function Teams() {
               height={pokeObj.height}
               onHandleClick={() => {}}
               isDeleteAvailable={true}
+              isAvailable={true}
               onDeleteClick={() =>
                 handleDeletePokemon(pokeObj.id, pokeObj.name)
               }

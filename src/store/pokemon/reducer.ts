@@ -50,6 +50,7 @@ export const pokemonReducer = (
         ...state,
         saving: false,
         savedTeam: [...state.savedTeam, ...action.payload],
+        pokemonTeam: []
       };
     }
     default:

@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import React, { FC } from "react";
 
 interface EmptyBoxProps {
@@ -7,11 +8,12 @@ interface EmptyBoxProps {
 }
 
 const EmptyBox: FC<EmptyBoxProps> = ({ path, label, message }) => {
+  const { push } = useRouter();
   return (
     <div className="empty-wrapper">
       <div className="empty-message">{message}</div>
-      <div className="empty-path">
-        <a href={path}>{label}</a>
+      <div className="empty-path" onClick={() => push(path)}>
+        {label}
       </div>
     </div>
   );

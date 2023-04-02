@@ -9,6 +9,7 @@ interface PokemonCardProps {
   weight: number;
   height: number;
   isDeleteAvailable: boolean;
+  isAvailable: boolean;
   onHandleClick: () => void;
   onDeleteClick: (id: number) => void;
 }
@@ -20,6 +21,7 @@ const PokemonCard: FC<PokemonCardProps> = ({
   weight,
   height,
   isDeleteAvailable,
+  isAvailable,
   onHandleClick,
   onDeleteClick,
 }) => {
@@ -28,8 +30,9 @@ const PokemonCard: FC<PokemonCardProps> = ({
       className="pokemon-card-wrapper"
       data-aos="fade-up"
       style={{ backgroundColor: getRandomColor(), position: "relative" }}
-      onClick={onHandleClick}
+      onClick={() => isAvailable && onHandleClick()}
     >
+        {!isAvailable && <div className="not-available-wrapper">Already Took</div>}
       <div>
         {isDeleteAvailable && (
           <div

@@ -118,6 +118,7 @@ export default function Home() {
                 height={pokeObj.height}
                 onHandleClick={() => visiblePokemonModel(pokeObj)}
                 isDeleteAvailable={false}
+                isAvailable={!currentTeam.savedTeam.includes(pokeObj.id)}
                 onDeleteClick={() => {}}
               />
             ))}
