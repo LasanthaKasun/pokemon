@@ -7,6 +7,7 @@ import {
   PokemonApiResponse,
   PokemonInterface,
 } from "@/shared/interfaces/pokemon.interface";
+import { toast } from "react-toastify";
 
 function getPokeList() {
   return axios.get("https://pokeapi.co/api/v2/pokemon?limit=151", {
@@ -60,8 +61,39 @@ function* getPokemonListSaga() {
   }
 }
 
+function* submitTeamSaga(data: { type: string, payload: PokemonInterface[] }) {
+  try {
+    let apiStatus = 0;
+    // mock api call for submit
+    yield axios.post("https://jsonplaceholder.typicode.com/posts", {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }).then((response) => {
+      apiStatus = response.status
+    });
+
+    if (apiStatus === 201) {
+      toast.success("Your team created successfully", {
+        icon: "🚀",
+      });
+      const getId = data.payload.map((obj) => obj.id);
+      yield put(actions.submitTeamSuccess(getId));
+    } else {
+      yield put(actions.submitTeamFailure("Error in create team saga"));
+    }
+
+  } catch (error) {
+    console.log(error);
+    yield put(actions.submitTeamFailure("Error in create team saga"));
+  }
+}
+
 function* pokemonSaga() {
-  yield all([takeLatest(actionTypes.GET_POKEMON_LIST, getPokemonListSaga)]);
+  yield all([
+    takeLatest(actionTypes.GET_POKEMON_LIST, getPokemonListSaga),
+    takeLatest(actionTypes.SUBMIT_TEAM, submitTeamSaga)
+  ]);
 }
 
 export default pokemonSaga;

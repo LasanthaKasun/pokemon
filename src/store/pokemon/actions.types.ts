@@ -12,3 +12,8 @@ export const DELETE_POKEMON = "DELETE_POKEMON";
 /***************** Reorder Pokemon list ***************************/
 export const RE_ORDER_POKEMON = "RE_ORDER_POKEMON";
 
+/***************** Submit Pokemon list ***************************/
+export const SUBMIT_TEAM = "SUBMIT_TEAM";
+export const SUBMIT_TEAM_SUCCESS = "SUBMIT_TEAM_SUCCESS";
+export const SUBMIT_TEAM_FAILURE = "SUBMIT_TEAM_FAILURE";
+

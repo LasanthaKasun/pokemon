@@ -37,3 +37,24 @@ export const deletePokemon = (payload: number): types.DeletePokemon => ({
 export const reOrderPokemon = (): types.ReOrderPokemon => ({
   type: actionTypes.RE_ORDER_POKEMON,
 });
+
+/****************************** SUBMIT POKEMON **********************************/
+export const submitTeam = (payload: PokemonInterface[]): types.SubmitTeam => ({
+  type: actionTypes.SUBMIT_TEAM,
+  payload
+});
+
+export const submitTeamSuccess = (
+  payload: number[]
+): types.SubmitTeamSuccess => ({
+  type: actionTypes.SUBMIT_TEAM_SUCCESS,
+  payload
+});
+
+export const submitTeamFailure = (
+  payload: string
+): types.SubmitTeamFailure => ({
+  type: actionTypes.SUBMIT_TEAM_FAILURE,
+  payload,
+});
+

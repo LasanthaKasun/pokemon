@@ -33,10 +33,29 @@ export type ReOrderPokemon = {
   type: typeof actionTypes.RE_ORDER_POKEMON;
 };
 
+/****************************** SUBMIT POKEMON **********************************/
+export type SubmitTeam = {
+  type: typeof actionTypes.SUBMIT_TEAM;
+  payload: PokemonInterface[];
+};
+
+export type SubmitTeamSuccess = {
+  type: typeof actionTypes.SUBMIT_TEAM_SUCCESS;
+  payload: number[];
+};
+
+export type SubmitTeamFailure = {
+  type: typeof actionTypes.SUBMIT_TEAM_FAILURE;
+  payload: string;
+};
+
 export type PokemonActions =
   | GetPokemonList
   | GetPokemonListSuccess
   | GetPokemonListFailure
   | SetPokemon
   | DeletePokemon
-  | ReOrderPokemon;
+  | ReOrderPokemon
+  | SubmitTeam
+  | SubmitTeamSuccess
+  | SubmitTeamFailure;

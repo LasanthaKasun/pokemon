@@ -5,4 +5,6 @@ export const POKE_INITIAL_STATE: PokemonStateInterface = {
   fetchStatus: "idle",
   pokemonTeam: [],
   error: "",
+  savedTeam: [],
+  saving: false,
 };

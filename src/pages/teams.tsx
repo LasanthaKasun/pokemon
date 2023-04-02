@@ -6,7 +6,11 @@ import PokemonCard from "@/components/PokemonCard/PokemonCard";
 import ResponsiveGrid from "@/components/ResponsiveGrid/ResponsiveGrid";
 import Spaces from "@/components/Spaces/Spaces";
 import { PokemonStateInterface } from "@/shared/interfaces/pokemon.interface";
-import { deletePokemon, reOrderPokemon } from "@/store/pokemon/actions";
+import {
+  deletePokemon,
+  reOrderPokemon,
+  submitTeam,
+} from "@/store/pokemon/actions";
 import { RootState } from "@/store/store";
 import Head from "next/head";
 import { useDispatch, useSelector } from "react-redux";
@@ -28,6 +32,10 @@ export default function Teams() {
 
   const handleReorderTeam = () => {
     dispatch(reOrderPokemon());
+  };
+
+  const handleSubmit = () => {
+    dispatch(submitTeam(currentTeam.pokemonTeam));
   };
 
   return (
@@ -79,13 +87,13 @@ export default function Teams() {
             label="Random Re-order"
             disable={currentTeam.pokemonTeam.length === 0}
             type="warn"
-            onHandleClick={() =>handleReorderTeam()}
+            onHandleClick={() => handleReorderTeam()}
           />
           <Button
             label="Submit Team"
-            disable={currentTeam.pokemonTeam.length === 0}
+            disable={currentTeam.pokemonTeam.length === 0 || currentTeam.saving}
             type="info"
-            onHandleClick={() => console.log("123")}
+            onHandleClick={() => handleSubmit()}
           />
         </ResponsiveGrid>
         <FloatingSection

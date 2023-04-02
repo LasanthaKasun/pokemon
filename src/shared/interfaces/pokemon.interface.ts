@@ -14,6 +14,8 @@ export interface PokemonStateInterface {
   fetchStatus: fetchStatus;
   pokemonTeam: PokemonInterface[];
   error: string;
+  savedTeam: number[];
+  saving: boolean;
 }
 
 export interface PokemonApiResponse {

@@ -39,6 +39,19 @@ export const pokemonReducer = (
         pokemonTeam: state.pokemonTeam.sort(() => Math.random() - 0.5),
       };
     }
+    case actionsTypes.SUBMIT_TEAM: {
+      return {
+        ...state,
+        saving: true,
+      };
+    }
+    case actionsTypes.SUBMIT_TEAM_SUCCESS: {
+      return {
+        ...state,
+        saving: false,
+        savedTeam: [...state.savedTeam, ...action.payload],
+      };
+    }
     default:
       return { ...state };
   }
